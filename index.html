@@ -4,42 +4,57 @@
   <meta charset="UTF-8" />
   <title>Elevate Home Services | Brandon & Tampa Handyman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Elevate Home Services provides small home repairs and handyman services in the Brandon & Tampa area. Call 813-603-7828 for fast, professional help." />
+  <meta name="description" content="Elevate Home Services provides reliable small home repairs and handyman services in the Brandon & Tampa, FL area. Call 813-603-7828 for fast, professional help." />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #020617;
-      --card: #0f172a;
-      --border: #1e293b;
-      --primary: #3b82f6;
-      --primary-soft: #60a5fa;
+      --bg: #020617;               /* page background */
+      --bg-elevated: #020617;
+      --card: #020617;             /* main card background */
+      --panel: #020617;
+      --border-subtle: #1e293b;
+      --border-strong: #1d283a;
+      --primary: #1e5fae;
+      --primary-soft: #3b82f6;
       --accent: #22c55e;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --muted-soft: #6b7280;
+      --chip-bg: #0f172a;
+      --chip-border: #1e293b;
       --radius-lg: 18px;
       --radius-xl: 22px;
       --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.85);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: "Inter", sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.14), transparent 55%),
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.11), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
         radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.08), transparent 60%),
         var(--bg);
       color: var(--text);
-      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .page {
       max-width: 1040px;
@@ -48,6 +63,7 @@
     }
 
     /* HEADER */
+
     header {
       display: flex;
       align-items: center;
@@ -59,25 +75,25 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
     }
 
     .brand-logo {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: #020617;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 30% 0%, #38bdf8, #1f2937 55%);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.5);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
     .brand-logo img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
     }
 
@@ -88,24 +104,16 @@
     }
 
     .brand-name {
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: 0.12em;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 0.98rem;
       text-transform: uppercase;
-      color: #f1f6ff;
-    }
-
-    .brand-byline {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.14em;
-      margin-top: -2px;
+      color: #e5f0ff;
     }
 
     .brand-tagline {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--muted);
-      margin-top: 3px;
     }
 
     .header-contact {
@@ -126,7 +134,7 @@
     .header-contact a.phone {
       font-weight: 600;
       color: #e5f0ff;
-      font-size: 1rem;
+      font-size: 0.96rem;
     }
 
     .btn-small {
@@ -134,224 +142,712 @@
       font-size: 0.8rem;
       padding: 6px 14px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary-soft), var(--primary));
+      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
       color: #ffffff;
       font-weight: 500;
-      border: 1px solid rgba(191, 219, 254, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.9);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.65);
     }
 
-    /* MAIN PANEL */
+    .btn-small span {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-contact {
+        align-items: flex-start;
+      }
+    }
+
+    /* MAIN CARD / LAYOUT */
+
     .shell {
-      background: rgba(15, 23, 42, 0.98);
-      border-radius: 24px;
-      padding: 26px;
-      border: 1px solid rgba(30, 64, 175, 0.55);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 58%),
+                  radial-gradient(circle at 140% 0%, rgba(56, 189, 248, 0.18), transparent 50%),
+                  #020617;
+      border-radius: 26px;
+      padding: 22px 18px 20px;
+      border: 1px solid rgba(30, 64, 175, 0.45);
       box-shadow: var(--shadow-strong);
+      backdrop-filter: blur(24px);
     }
 
-    /* HERO SECTION */
-    .hero h1 {
-      font-size: 1.65rem;
-      font-weight: 700;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.3fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.28), transparent 55%),
+                  rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-xl);
+      padding: 22px 20px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #a5f3fc;
+      font-weight: 600;
       margin-bottom: 10px;
-      color: #eff6ff;
     }
 
-    .hero p {
+    .hero h1 {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: #e5f0ff;
+    }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
+    .hero-sub {
       font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 16px;
     }
 
-    .hero ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-    }
-
-    .hero li {
-      margin-bottom: 6px;
-      color: #d1d5db;
-      display: flex;
-      gap: 8px;
-    }
-
-    /* SECTION CARDS */
-    section {
-      margin-bottom: 24px;
-    }
-
-    .section-card {
-      padding: 18px;
-      background: #020617;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-    }
-
-    .section-card h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #e5e7eb;
-    }
-
-    .section-card p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.55;
-    }
-
-    /* CONTACT */
-    .contact-grid {
+    .hero-bullets {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 14px;
+      list-style: none;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
     }
 
-    @media (max-width: 700px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
+    .hero-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #d1d5db;
+    }
+
+    .hero-bullets span.icon {
+      font-size: 0.9rem;
+      color: #4ade80;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 620px) {
+      .hero-bullets {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero h1 {
+        font-size: 1.7rem;
       }
     }
 
-    label {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(130deg, var(--primary-soft), #1d4ed8);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(191, 219, 254, 0.45);
+      box-shadow: 0 20px 38px rgba(37, 99, 235, 0.9);
+      cursor: pointer;
+    }
+
+    .btn-primary span {
+      font-size: 1.2rem;
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.75);
+      background: rgba(15, 23, 42, 0.85);
       font-size: 0.8rem;
-      font-weight: 500;
       color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .btn-ghost strong {
+      color: #bfdbfe;
+      font-weight: 500;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      margin-top: 8px;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 18px;
+      padding: 13px 15px 11px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      font-size: 0.86rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted-soft);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .hero-card-main {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #e5e7eb;
+      margin-bottom: 3px;
+    }
+
+    .hero-card-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      color: #cbd5f5;
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-bottom: 18px;
+    }
+
+    .section-card {
+      border-radius: 20px;
+      padding: 16px 16px 14px;
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.21), transparent 55%),
+                  rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+    }
+
+    .section-header {
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 1.02rem;
+      color: #e5f0ff;
+    }
+
+    .section-header p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 720px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-item {
+      padding: 9px 10px 7px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid #1f2937;
+    }
+
+    .service-title {
+      font-weight: 500;
+      margin-bottom: 2px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .service-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* WHY / PROCESS */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .bullet-item {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .bullet-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      margin-top: 6px;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    .bullet-item strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .process-list {
+      list-style: none;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .process-step {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .step-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 2px solid #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: #bfdbfe;
+      flex-shrink: 0;
+      margin-top: 3px;
+      background: #020617;
+    }
+
+    .step-text strong {
       display: block;
-      margin-bottom: 4px;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .step-text span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 8px;
+      font-size: 0.82rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+      display: inline-block;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      background: #0f172a;
-      border: 1px solid var(--border);
+      padding: 7px 9px;
       border-radius: 10px;
+      border: 1px solid #1f2937;
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      background: #020617;
       color: #e5e7eb;
-      font-size: 0.9rem;
     }
 
-    textarea { min-height: 100px; }
+    input::placeholder, textarea::placeholder {
+      color: #6b7280;
+    }
 
-    .btn-primary {
-      margin-top: 10px;
-      padding: 10px 22px;
-      border-radius: 999px;
-      background: linear-gradient(130deg, var(--primary-soft), #1d4ed8);
-      color: #ffffff;
-      font-weight: 600;
-      border: 1px solid rgba(191, 219, 254, 0.45);
+    input:focus, textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
+      background: #020617;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .btn-submit {
+      border: none;
       cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .contact-details {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .contact-details p {
+      margin-bottom: 6px;
+    }
+
+    .contact-details strong {
+      color: #e5e7eb;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .chip {
+      font-size: 0.76rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      color: #cbd5f5;
     }
 
     footer {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.78rem;
+      margin-top: 12px;
+      padding: 8px 4px 0;
+      font-size: 0.76rem;
       color: var(--muted-soft);
+      text-align: center;
     }
   </style>
 </head>
-
 <body>
   <div class="page">
+    <!-- HEADER -->
     <header>
       <div class="brand">
         <div class="brand-logo">
-          <img src="logo-elevate.jpg" alt="Elevate logo">
+          <!-- Make sure this filename matches the image in your repo -->
+          <img src="IMG_3644.PNG" alt="Elevate Home Services logo">
         </div>
-
         <div class="brand-text">
-          <div class="brand-name">ELEVATE HOME SERVICES</div>
-          <div class="brand-byline">by Howard</div>
-          <div class="brand-tagline">Brandon • Riverview • Tampa</div>
+          <div class="brand-name">Elevate Home Services</div>
+          <div class="brand-tagline">Small home repairs • Brandon, Riverview & Tampa</div>
         </div>
       </div>
 
       <div class="header-contact">
         <span>Call or Text</span>
         <a class="phone" href="tel:+18136037828">813-603-7828</a>
-        <a class="btn-small" href="tel:+18136037828">Book a visit</a>
+        <a class="btn-small" href="tel:+18136037828">
+          <span>⬆</span> Book a visit
+        </a>
       </div>
     </header>
 
     <div class="shell">
+      <main>
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-main">
+            <div class="eyebrow">Weeknight & Weekend Handyman</div>
+            <h1>Reliable home repairs for busy homeowners in <span>Brandon & Tampa</span>.</h1>
+            <p class="hero-sub">
+              Ceiling fans, TV mounts, light fixtures, minor plumbing, and the small jobs that never
+              quite make it off the to-do list.
+            </p>
 
-      <!-- HERO SECTION -->
-      <section class="hero">
-        <h1>Your trusted home repair help, available evenings & weekends.</h1>
-        <p>
-          Ceiling fans, TV mounts, fixtures, minor plumbing, drywall patches, small installs, and 
-          general home tasks handled with care and professionalism.
-        </p>
+            <ul class="hero-bullets">
+              <li><span class="icon">✔</span><span>Skilled trades background</span></li>
+              <li><span class="icon">✔</span><span>Clear expectations before work starts</span></li>
+              <li><span class="icon">✔</span><span>Respect for your time & your home</span></li>
+              <li><span class="icon">✔</span><span>Friday–Sunday availability</span></li>
+            </ul>
 
-        <ul>
-          <li>✔ Skilled trades background</li>
-          <li>✔ Clear expectations before work starts</li>
-          <li>✔ Respect for your time & your home</li>
-          <li>✔ Available Friday–Sunday + select weeknights</li>
-        </ul>
-      </section>
+            <div class="hero-actions">
+              <a class="btn-primary" href="tel:+18136037828">
+                <span>📞</span> Call now for a quote
+              </a>
+              <a class="btn-ghost" href="mailto:ElevateHomeServicesFL@gmail.com?subject=Service%20Request">
+                Or email <strong>photos of your project</strong> for a quick estimate
+              </a>
+            </div>
 
-      <section class="section-card">
-        <h2>What We Do</h2>
-        <p>
-          From fixture swaps to drywall patches, small installs, TV mounting, furniture assembly, and 
-          general home tasks — we help with the small things that never quite make it off your list.
-        </p>
-      </section>
-
-      <section class="section-card">
-        <h2>Why Choose Us</h2>
-        <p>
-          You get honest communication, proper tools, clean work, and respectful service every time. 
-          No upselling, no inflated fees — just dependable help when you need it.
-        </p>
-      </section>
-
-      <section class="section-card">
-        <h2>How It Works</h2>
-        <p>
-          Call or text with your project details, send photos if needed, get a straightforward quote, 
-          and choose a time that fits your schedule. Fast and simple.
-        </p>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section-card">
-        <h2>Request a Quote</h2>
-
-        <div class="contact-grid">
-          <form action="mailto:ElevateHomeServicesFL@gmail.com" method="post" enctype="text/plain">
-            <label>Name</label>
-            <input name="Name" type="text" required>
-
-            <label>Phone</label>
-            <input name="Phone" type="tel" required>
-
-            <label>City</label>
-            <input name="Area" type="text">
-
-            <label>Project Details</label>
-            <textarea name="Details"></textarea>
-
-            <button class="btn-primary" type="submit">Send Request</button>
-          </form>
-
-          <div>
-            <p><strong>Call or text:</strong> 813-603-7828</p>
-            <p><strong>Email:</strong> ElevateHomeServicesFL@gmail.com</p>
-            <p><strong>Service area:</strong> Brandon, Riverview, Valrico, Tampa</p>
+            <p class="hero-note">
+              Serving Brandon, Riverview, Valrico, Tampa & nearby areas.
+            </p>
           </div>
-        </div>
-      </section>
 
+          <div class="hero-side">
+            <div class="hero-card">
+              <div class="hero-card-title">Popular projects</div>
+              <div class="hero-card-main">Fast, focused help for small jobs</div>
+              <div class="hero-card-sub">
+                Perfect for the things you don’t have time, tools, or desire to tackle.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Ceiling fans</span>
+                <span class="tag">TV mounting</span>
+                <span class="tag">Light fixtures</span>
+                <span class="tag">Faucets & toilets</span>
+                <span class="tag">Furniture assembly</span>
+                <span class="tag">Drywall patches</span>
+              </div>
+            </div>
+
+            <div class="hero-card">
+              <div class="hero-card-title">Availability</div>
+              <div class="hero-card-main">Friday – Sunday + select evenings</div>
+              <div class="hero-card-sub">
+                Ideal for working professionals and families who need work done outside 9-to-5 hours.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section>
+          <div class="section-card">
+            <div class="section-header">
+              <h2>Services</h2>
+              <p>If it’s a small home project, there’s a good chance we can help. Just ask.</p>
+            </div>
+
+            <div class="services-grid">
+              <div class="service-item">
+                <div class="service-title">Ceiling fans & fixtures</div>
+                <div class="service-sub">Safe removal, installation, and clean wiring.</div>
+              </div>
+              <div class="service-item">
+                <div class="service-title">TV wall mounting</div>
+                <div class="service-sub">Secure mounting, clean layout, guidance on height & placement.</div>
+              </div>
+              <div class="service-item">
+                <div class="service-title">Minor plumbing</div>
+                <div class="service-sub">Faucet, shower head, and toilet repairs or swaps.</div>
+              </div>
+              <div class="service-item">
+                <div class="service-title">Furniture & assembly</div>
+                <div class="service-sub">Beds, dressers, shelving, gym equipment, and more.</div>
+              </div>
+              <div class="service-item">
+                <div class="service-title">Drywall & patch work</div>
+                <div class="service-sub">Small holes, dings, and simple repairs.</div>
+              </div>
+              <div class="service-item">
+                <div class="service-title">Smart home installs</div>
+                <div class="service-sub">Doorbells, cameras, smart locks, thermostats.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHY / HOW -->
+        <section>
+          <div class="section-card">
+            <div class="two-col">
+              <div>
+                <div class="section-header">
+                  <h2>Why Elevate?</h2>
+                  <p>Straightforward work, clear communication, and respect for your home.</p>
+                </div>
+                <ul class="bullet-list">
+                  <li class="bullet-item">
+                    <div class="bullet-dot"></div>
+                    <div><strong>Skilled trade background</strong> – not guessing, actually experienced with tools and systems.</div>
+                  </li>
+                  <li class="bullet-item">
+                    <div class="bullet-dot"></div>
+                    <div><strong>On your schedule</strong> – weekend and evening options built for real life.</div>
+                  </li>
+                  <li class="bullet-item">
+                    <div class="bullet-dot"></div>
+                    <div><strong>No mystery</strong> – you’ll know what’s happening before anything gets taken apart.</div>
+                  </li>
+                  <li class="bullet-item">
+                    <div class="bullet-dot"></div>
+                    <div><strong>Respectful presence</strong> – clean work, shoes off when needed, and everything put back together.</div>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="section-header">
+                  <h2>How it works</h2>
+                  <p>Simple, quick, and built around busy schedules.</p>
+                </div>
+                <ul class="process-list">
+                  <li class="process-step">
+                    <div class="step-badge">1</div>
+                    <div class="step-text">
+                      <strong>Reach out</strong>
+                      <span>Call or text <strong>813-603-7828</strong> with a quick description of the job.</span>
+                    </div>
+                  </li>
+                  <li class="process-step">
+                    <div class="step-badge">2</div>
+                    <div class="step-text">
+                      <strong>Send photos</strong>
+                      <span>Text or email photos so we can give a rough estimate and plan ahead.</span>
+                    </div>
+                  </li>
+                  <li class="process-step">
+                    <div class="step-badge">3</div>
+                    <div class="step-text">
+                      <strong>Schedule</strong>
+                      <span>Pick a Friday, Saturday, Sunday, or select evening that works best.</span>
+                    </div>
+                  </li>
+                  <li class="process-step">
+                    <div class="step-badge">4</div>
+                    <div class="step-text">
+                      <strong>Job done right</strong>
+                      <span>Work is completed, walked through with you, and cleaned up before leaving.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section>
+          <div class="section-card">
+            <div class="section-header">
+              <h2>Request a quote</h2>
+              <p>Fastest response: call or text. You can also send a message using this form.</p>
+            </div>
+
+            <div class="contact-grid">
+              <div>
+                <form action="mailto:ElevateHomeServicesFL@gmail.com" method="post" enctype="text/plain">
+                  <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="Name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="Phone" type="tel" placeholder="Best number to reach you" required />
+                  </div>
+                  <div>
+                    <label for="area">City / Neighborhood</label>
+                    <input id="area" name="Area" type="text" placeholder="Brandon, Riverview, etc." />
+                  </div>
+                  <div>
+                    <label for="message">What do you need help with?</label>
+                    <textarea id="message" name="Project details" placeholder="Tell us what you’d like done. You can also mention if you’ve texted photos."></textarea>
+                  </div>
+                  <button class="btn-primary btn-submit" type="submit">
+                    Send request
+                  </button>
+                </form>
+              </div>
+
+              <div class="contact-details">
+                <p><strong>Call or text:</strong><br>
+                  <a href="tel:+18136037828">813-603-7828</a>
+                </p>
+                <p><strong>Email:</strong><br>
+                  <a href="mailto:ElevateHomeServicesFL@gmail.com">ElevateHomeServicesFL@gmail.com</a>
+                </p>
+                <p><strong>Service area:</strong><br>
+                  Brandon, Riverview, Valrico, Tampa, and nearby communities.
+                </p>
+                <p><strong>Typical availability:</strong><br>
+                  Fridays, Saturdays, Sundays + limited weeknight appointments.
+                </p>
+
+                <div class="chips">
+                  <span class="chip">Ceiling fans</span>
+                  <span class="chip">TV mounts</span>
+                  <span class="chip">Fixtures & faucets</span>
+                  <span class="chip">Drywall patches</span>
+                  <span class="chip">Smart devices</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <footer>
