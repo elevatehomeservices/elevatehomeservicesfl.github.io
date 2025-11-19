@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Elevate Home Services | Brandon & Tampa Handyman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Elevate Home Services provides small home repairs and handyman services in the Brandon & Tampa, FL area. Call 813-603-7828 for fast, professional help." />
+  <meta name="description" content="Elevate Home Services provides small home repairs and handyman services in the Brandon & Tampa area. Call 813-603-7828 for fast, professional help." />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,11 +25,7 @@
       --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.85);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Inter", sans-serif;
@@ -42,15 +38,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .page {
       max-width: 1040px;
@@ -59,7 +48,6 @@
     }
 
     /* HEADER */
-
     header {
       display: flex;
       align-items: center;
@@ -96,7 +84,7 @@
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .brand-name {
@@ -104,12 +92,20 @@
       font-size: 1.2rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #eff6ff;
+      color: #f1f6ff;
+    }
+
+    .brand-byline {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.14em;
+      margin-top: -2px;
     }
 
     .brand-tagline {
       font-size: 0.82rem;
       color: var(--muted);
+      margin-top: 3px;
     }
 
     .header-contact {
@@ -149,47 +145,45 @@
     }
 
     /* MAIN PANEL */
-
     .shell {
       background: rgba(15, 23, 42, 0.98);
       border-radius: 24px;
-      padding: 36px 24px;
+      padding: 26px;
       border: 1px solid rgba(30, 64, 175, 0.55);
       box-shadow: var(--shadow-strong);
     }
 
-    /* CENTER TITLE */
-
-    .big-title {
-      text-align: center;
-      margin-bottom: 40px;
+    /* HERO SECTION */
+    .hero h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #eff6ff;
     }
 
-    .big-title h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #f0f6ff;
-      margin-bottom: 4px;
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 16px;
     }
 
-    .big-title .byline {
-      font-size: 0.85rem;
-      color: var(--muted-soft);
-      letter-spacing: 0.15em;
+    .hero ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      .big-title h1 {
-        font-size: 2.2rem;
-      }
+    .hero li {
+      margin-bottom: 6px;
+      color: #d1d5db;
+      display: flex;
+      gap: 8px;
     }
 
-    /* TEXT SECTIONS */
-
+    /* SECTION CARDS */
     section {
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     .section-card {
@@ -200,7 +194,7 @@
     }
 
     .section-card h2 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 8px;
       color: #e5e7eb;
@@ -208,12 +202,11 @@
 
     .section-card p {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.93rem;
       line-height: 1.55;
     }
 
     /* CONTACT */
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -244,9 +237,7 @@
       font-size: 0.9rem;
     }
 
-    textarea {
-      min-height: 100px;
-    }
+    textarea { min-height: 100px; }
 
     .btn-primary {
       margin-top: 10px;
@@ -278,6 +269,7 @@
 
         <div class="brand-text">
           <div class="brand-name">ELEVATE HOME SERVICES</div>
+          <div class="brand-byline">by Howard</div>
           <div class="brand-tagline">Brandon • Riverview • Tampa</div>
         </div>
       </div>
@@ -291,33 +283,43 @@
 
     <div class="shell">
 
-      <!-- BIG TITLE -->
-      <div class="big-title">
-        <h1>ELEVATE HOME SERVICES</h1>
-        <div class="byline">by Howard</div>
-      </div>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <h1>Your trusted home repair help, available evenings & weekends.</h1>
+        <p>
+          Ceiling fans, TV mounts, fixtures, minor plumbing, drywall patches, small installs, and 
+          general home tasks handled with care and professionalism.
+        </p>
+
+        <ul>
+          <li>✔ Skilled trades background</li>
+          <li>✔ Clear expectations before work starts</li>
+          <li>✔ Respect for your time & your home</li>
+          <li>✔ Available Friday–Sunday + select weeknights</li>
+        </ul>
+      </section>
 
       <section class="section-card">
         <h2>What We Do</h2>
         <p>
-          Reliable evening and weekend home repair work including ceiling fans, light fixtures, TV
-          mounting, minor plumbing, drywall patches, small installs, and general home tasks.
+          From fixture swaps to drywall patches, small installs, TV mounting, furniture assembly, and 
+          general home tasks — we help with the small things that never quite make it off your list.
         </p>
       </section>
 
       <section class="section-card">
         <h2>Why Choose Us</h2>
         <p>
-          You get honest communication, proper tools, clean work, and respectful service every time.
-          No upselling, no inflated fees—just straightforward help when you need it.
+          You get honest communication, proper tools, clean work, and respectful service every time. 
+          No upselling, no inflated fees — just dependable help when you need it.
         </p>
       </section>
 
       <section class="section-card">
         <h2>How It Works</h2>
         <p>
-          Call or text with the project details, send photos if needed, get a straightforward quote,
-          and pick a time that fits your schedule. Fridays–Sundays and weeknights available.
+          Call or text with your project details, send photos if needed, get a straightforward quote, 
+          and choose a time that fits your schedule. Fast and simple.
         </p>
       </section>
 
