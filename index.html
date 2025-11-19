@@ -11,20 +11,16 @@
 
   <style>
     :root {
-      --bg: #020617;               /* page background */
-      --bg-elevated: #020617;
-      --card: #020617;             /* main card background */
+      --bg: #020617;
+      --card: #020617;
       --panel: #020617;
-      --border-subtle: #1e293b;
-      --border-strong: #1d283a;
-      --primary: #1e5fae;
-      --primary-soft: #3b82f6;
+      --border: #1e293b;
+      --primary: #3b82f6;
+      --primary-soft: #60a5fa;
       --accent: #22c55e;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --muted-soft: #6b7280;
-      --chip-bg: #0f172a;
-      --chip-border: #1e293b;
       --radius-lg: 18px;
       --radius-xl: 22px;
       --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.85);
@@ -39,11 +35,12 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.11), transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.14), transparent 55%),
         radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.08), transparent 60%),
         var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
 
     a {
@@ -75,44 +72,44 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .brand-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: radial-gradient(circle at 30% 0%, #38bdf8, #1f2937 55%);
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #020617;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
     }
 
     .brand-logo img {
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
     }
 
     .brand-name {
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 1.15rem;
       text-transform: uppercase;
-      color: #e5f0ff;
+      color: #eff6ff;
     }
 
     .brand-tagline {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--muted);
     }
 
@@ -134,7 +131,7 @@
     .header-contact a.phone {
       font-weight: 600;
       color: #e5f0ff;
-      font-size: 0.96rem;
+      font-size: 1rem;
     }
 
     .btn-small {
@@ -142,14 +139,14 @@
       font-size: 0.8rem;
       padding: 6px 14px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+      background: linear-gradient(135deg, var(--primary-soft), var(--primary));
       color: #ffffff;
       font-weight: 500;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(191, 219, 254, 0.5);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.65);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.9);
     }
 
     .btn-small span {
@@ -166,25 +163,25 @@
       }
     }
 
-    /* MAIN CARD / LAYOUT */
+    /* MAIN SHELL */
 
     .shell {
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 58%),
-                  radial-gradient(circle at 140% 0%, rgba(56, 189, 248, 0.18), transparent 50%),
-                  #020617;
-      border-radius: 26px;
-      padding: 22px 18px 20px;
-      border: 1px solid rgba(30, 64, 175, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 24px;
+      padding: 20px 18px 20px;
+      border: 1px solid rgba(30, 64, 175, 0.55);
       box-shadow: var(--shadow-strong);
-      backdrop-filter: blur(24px);
+      backdrop-filter: blur(20px);
     }
+
+    /* HERO */
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.3fr);
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.2fr);
       gap: 20px;
       align-items: stretch;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     @media (max-width: 880px) {
@@ -194,11 +191,11 @@
     }
 
     .hero-main {
-      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.28), transparent 55%),
-                  rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.35), transparent 65%),
+                  #020617;
       border-radius: var(--radius-xl);
       padding: 22px 20px 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.45);
     }
 
     .eyebrow {
@@ -207,53 +204,52 @@
       letter-spacing: 0.2em;
       color: #a5f3fc;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .hero h1 {
-      font-size: 1.9rem;
+    .hero-title {
+      font-size: 2rem;
       line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #e5f0ff;
     }
 
-    .hero h1 span {
+    .hero-title span {
       color: #60a5fa;
     }
 
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--muted);
       margin-bottom: 16px;
     }
 
     .hero-bullets {
+      list-style: none;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 6px 14px;
-      list-style: none;
-      font-size: 0.86rem;
       margin-bottom: 18px;
+      font-size: 0.86rem;
     }
 
     .hero-bullets li {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       color: #d1d5db;
     }
 
     .hero-bullets span.icon {
       font-size: 0.9rem;
       color: #4ade80;
-      flex-shrink: 0;
     }
 
     @media (max-width: 620px) {
       .hero-bullets {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero h1 {
+      .hero-title {
         font-size: 1.7rem;
       }
     }
@@ -288,7 +284,7 @@
       padding: 9px 16px;
       border-radius: 999px;
       border: 1px dashed rgba(148, 163, 184, 0.75);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       font-size: 0.8rem;
       color: var(--muted);
       display: inline-flex;
@@ -307,69 +303,47 @@
       margin-top: 8px;
     }
 
-    .hero-side {
+    .hero-image-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.55);
+      background: #020617;
       display: flex;
       flex-direction: column;
-      gap: 10px;
     }
 
-    .hero-card {
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 18px;
-      padding: 13px 15px 11px;
-      border: 1px solid rgba(51, 65, 85, 0.9);
-      font-size: 0.86rem;
+    .hero-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      max-height: 240px;
     }
 
-    .hero-card-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted-soft);
-      margin-bottom: 6px;
-      font-weight: 600;
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
     }
 
-    .hero-card-main {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #e5e7eb;
-      margin-bottom: 3px;
-    }
-
-    .hero-card-sub {
-      font-size: 0.8rem;
+    .hero-image-label {
+      padding: 10px 14px 10px;
+      font-size: 0.82rem;
       color: var(--muted);
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.3), transparent 60%);
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .tag {
-      font-size: 0.76rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: var(--chip-bg);
-      border: 1px solid var(--chip-border);
-      color: #cbd5f5;
-    }
-
-    /* SECTIONS */
+    /* SECTIONS GENERAL */
 
     section {
       margin-bottom: 18px;
     }
 
     .section-card {
-      border-radius: 20px;
-      padding: 16px 16px 14px;
-      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.21), transparent 55%),
-                  rgba(15, 23, 42, 0.94);
-      border: 1px solid rgba(51, 65, 85, 0.95);
+      border-radius: var(--radius-xl);
+      padding: 16px 16px 16px;
+      background: #020617;
+      border: 1px solid rgba(30, 64, 175, 0.6);
     }
 
     .section-header {
@@ -391,28 +365,52 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 14px;
-      font-size: 0.88rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 0.86rem;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
       .services-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
 
-    .service-item {
-      padding: 9px 10px 7px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid #1f2937;
+    .service-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-image {
+      position: relative;
+      overflow: hidden;
+      max-height: 140px;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-body {
+      padding: 10px 11px 9px;
     }
 
     .service-title {
+      font-size: 0.92rem;
       font-weight: 500;
       margin-bottom: 2px;
-      font-size: 0.9rem;
       color: #e5e7eb;
     }
 
@@ -421,7 +419,7 @@
       color: var(--muted);
     }
 
-    /* WHY / PROCESS */
+    /* WHY / HOW */
 
     .two-col {
       display: grid;
@@ -452,7 +450,7 @@
       height: 7px;
       border-radius: 999px;
       margin-top: 6px;
-      background: #22c55e;
+      background: var(--accent);
       flex-shrink: 0;
     }
 
@@ -477,7 +475,7 @@
       width: 22px;
       height: 22px;
       border-radius: 999px;
-      border: 2px solid #3b82f6;
+      border: 2px solid var(--primary-soft);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -532,7 +530,7 @@
       width: 100%;
       padding: 7px 9px;
       border-radius: 10px;
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border);
       font-family: inherit;
       font-size: 0.86rem;
       outline: none;
@@ -545,8 +543,8 @@
     }
 
     input:focus, textarea:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
+      border-color: var(--primary-soft);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
       background: #020617;
     }
 
@@ -605,11 +603,11 @@
     <header>
       <div class="brand">
         <div class="brand-logo">
-          <!-- Make sure this filename matches the image in your repo -->
-          <img src="IMG_3644.PNG" alt="Elevate Home Services logo">
+          <!-- Make sure this filename matches your logo in the repo -->
+          <img src="logo-elevate.jpg" alt="Elevate Home Services logo">
         </div>
         <div class="brand-text">
-          <div class="brand-name">Elevate Home Services</div>
+          <div class="brand-name">ELEVATE HOME SERVICES</div>
           <div class="brand-tagline">Small home repairs • Brandon, Riverview & Tampa</div>
         </div>
       </div>
@@ -629,7 +627,9 @@
         <section class="hero">
           <div class="hero-main">
             <div class="eyebrow">Weeknight & Weekend Handyman</div>
-            <h1>Reliable home repairs for busy homeowners in <span>Brandon & Tampa</span>.</h1>
+            <h1 class="hero-title">
+              Professional home repairs for busy homeowners in <span>Brandon & Tampa</span>.
+            </h1>
             <p class="hero-sub">
               Ceiling fans, TV mounts, light fixtures, minor plumbing, and the small jobs that never
               quite make it off the to-do list.
@@ -656,29 +656,14 @@
             </p>
           </div>
 
-          <div class="hero-side">
-            <div class="hero-card">
-              <div class="hero-card-title">Popular projects</div>
-              <div class="hero-card-main">Fast, focused help for small jobs</div>
-              <div class="hero-card-sub">
-                Perfect for the things you don’t have time, tools, or desire to tackle.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Ceiling fans</span>
-                <span class="tag">TV mounting</span>
-                <span class="tag">Light fixtures</span>
-                <span class="tag">Faucets & toilets</span>
-                <span class="tag">Furniture assembly</span>
-                <span class="tag">Drywall patches</span>
-              </div>
+          <div class="hero-image-card">
+            <div class="hero-image-wrapper">
+              <!-- Hero stock image -->
+              <img src="https://images.pexels.com/photos/5711089/pexels-photo-5711089.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Modern handyman working in a home">
             </div>
-
-            <div class="hero-card">
-              <div class="hero-card-title">Availability</div>
-              <div class="hero-card-main">Friday – Sunday + select evenings</div>
-              <div class="hero-card-sub">
-                Ideal for working professionals and families who need work done outside 9-to-5 hours.
-              </div>
+            <div class="hero-image-label">
+              Recent work: mounting TVs, swapping fixtures, and tackling “honey-do” lists for local families.
             </div>
           </div>
         </section>
@@ -692,29 +677,82 @@
             </div>
 
             <div class="services-grid">
-              <div class="service-item">
-                <div class="service-title">Ceiling fans & fixtures</div>
-                <div class="service-sub">Safe removal, installation, and clean wiring.</div>
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/3791660/pexels-photo-3791660.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Technician installing a TV on the wall">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">TV mounting & layout</div>
+                  <div class="service-sub">
+                    Secure mounting, clean layout, and help picking the right height and wall.
+                  </div>
+                </div>
               </div>
-              <div class="service-item">
-                <div class="service-title">TV wall mounting</div>
-                <div class="service-sub">Secure mounting, clean layout, guidance on height & placement.</div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/4792479/pexels-photo-4792479.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Electrician working on light fixture wiring">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">Ceiling fans & fixtures</div>
+                  <div class="service-sub">
+                    Safe removal, installation, and cleaner, more modern lighting in your home.
+                  </div>
+                </div>
               </div>
-              <div class="service-item">
-                <div class="service-title">Minor plumbing</div>
-                <div class="service-sub">Faucet, shower head, and toilet repairs or swaps.</div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/5854187/pexels-photo-5854187.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Plumber working under a sink">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">Minor plumbing & hardware</div>
+                  <div class="service-sub">
+                    Faucet swaps, toilet repairs, shower heads, and other quick upgrades.
+                  </div>
+                </div>
               </div>
-              <div class="service-item">
-                <div class="service-title">Furniture & assembly</div>
-                <div class="service-sub">Beds, dressers, shelving, gym equipment, and more.</div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/6492395/pexels-photo-6492395.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Worker assembling furniture in a modern home">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">Furniture & assembly</div>
+                  <div class="service-sub">
+                    Beds, dressers, shelving, gym equipment, and more put together correctly.
+                  </div>
+                </div>
               </div>
-              <div class="service-item">
-                <div class="service-title">Drywall & patch work</div>
-                <div class="service-sub">Small holes, dings, and simple repairs.</div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/4792537/pexels-photo-4792537.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Worker repairing drywall on interior wall">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">Drywall patches</div>
+                  <div class="service-sub">
+                    Small holes, dings, and simple repairs that prepare walls for paint.
+                  </div>
+                </div>
               </div>
-              <div class="service-item">
-                <div class="service-title">Smart home installs</div>
-                <div class="service-sub">Doorbells, cameras, smart locks, thermostats.</div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                       alt="Smart home doorbell being installed">
+                </div>
+                <div class="service-body">
+                  <div class="service-title">Smart home installs</div>
+                  <div class="service-sub">
+                    Doorbells, cameras, smart locks, thermostats, and simple device setups.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -726,25 +764,25 @@
             <div class="two-col">
               <div>
                 <div class="section-header">
-                  <h2>Why Elevate?</h2>
-                  <p>Straightforward work, clear communication, and respect for your home.</p>
+                  <h2>Why Elevate Home Services?</h2>
+                  <p>Built for people who want solid work without the runaround.</p>
                 </div>
                 <ul class="bullet-list">
                   <li class="bullet-item">
                     <div class="bullet-dot"></div>
-                    <div><strong>Skilled trade background</strong> – not guessing, actually experienced with tools and systems.</div>
+                    <div><strong>Trade background</strong> – hands-on experience with tools, systems, and real-world work.</div>
                   </li>
                   <li class="bullet-item">
                     <div class="bullet-dot"></div>
-                    <div><strong>On your schedule</strong> – weekend and evening options built for real life.</div>
+                    <div><strong>On your schedule</strong> – weekend and evening appointments that fit around real life.</div>
                   </li>
                   <li class="bullet-item">
                     <div class="bullet-dot"></div>
-                    <div><strong>No mystery</strong> – you’ll know what’s happening before anything gets taken apart.</div>
+                    <div><strong>Clear communication</strong> – what’s happening, how long it’ll take, and what it’ll cost.</div>
                   </li>
                   <li class="bullet-item">
                     <div class="bullet-dot"></div>
-                    <div><strong>Respectful presence</strong> – clean work, shoes off when needed, and everything put back together.</div>
+                    <div><strong>Respectful presence</strong> – shoes off when needed, clean workspace, everything put back.</div>
                   </li>
                 </ul>
               </div>
@@ -759,7 +797,7 @@
                     <div class="step-badge">1</div>
                     <div class="step-text">
                       <strong>Reach out</strong>
-                      <span>Call or text <strong>813-603-7828</strong> with a quick description of the job.</span>
+                      <span>Call or text <strong>813-603-7828</strong> with a quick description of what you need.</span>
                     </div>
                   </li>
                   <li class="process-step">
@@ -773,14 +811,14 @@
                     <div class="step-badge">3</div>
                     <div class="step-text">
                       <strong>Schedule</strong>
-                      <span>Pick a Friday, Saturday, Sunday, or select evening that works best.</span>
+                      <span>Pick a Friday, Saturday, Sunday, or select evening that works for you.</span>
                     </div>
                   </li>
                   <li class="process-step">
                     <div class="step-badge">4</div>
                     <div class="step-text">
                       <strong>Job done right</strong>
-                      <span>Work is completed, walked through with you, and cleaned up before leaving.</span>
+                      <span>Work gets done, walked through with you, and the space is left clean.</span>
                     </div>
                   </li>
                 </ul>
